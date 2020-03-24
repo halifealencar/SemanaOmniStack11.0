@@ -3,7 +3,7 @@ Repositório criado para aprendizado da Stack baseada em JavaScript com: Node.js
 
 # Passo a passo
 
-1 - Instalação do Node.Js via gerenciador de pacotes usando o Chocolatey.
+1 - Instalação do Node.Js via gerenciador de pacotes usando o Chocolatey (sistemas Windows).
 
 obs: package.json é onde fica armazenado informações das dependências do projeto.
 
