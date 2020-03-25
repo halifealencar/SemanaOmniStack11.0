@@ -1,10 +1,6 @@
 const express = require('express');
 
-//cria aplicação
-const app = express();
-
-//tem que vir antes, diz ao express transformar o JSON em java script object
-app.use(express.json());
+const routes = express.Router();
 
 /*
 métodos HTTP:
@@ -23,7 +19,7 @@ Route params: indetificar recursos, exemplo: /id
 Request Body: corpo da requisição, ex: criar ou alterar algo
 */
 
-app.post('/users/', (request, response) =>{
+routes.post('/users/', (request, response) =>{
     
     const body = request.body;
 
@@ -32,8 +28,5 @@ app.post('/users/', (request, response) =>{
     return response.json(body);
 });
 
-//configura porta da aplicação
-app.listen(3333);
-
-
-
+//exporta este variavel de dentro de um arquivo. Esta sendo importado pela index
+module.exports = routes;
