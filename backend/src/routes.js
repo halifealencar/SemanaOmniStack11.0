@@ -1,32 +1,17 @@
 const express = require('express');
+const OngController = require('./controllers/OngController');
+const IncidentController = require('./controllers/IncidentController');
+const ProfileController = require('./controllers/ProfileController');
 
 const routes = express.Router();
 
-/*
-métodos HTTP:
+routes.get('/ongs', OngController.index);
+routes.post('/ongs/', OngController.create);
 
-GET: Buscar informação
-POST: Criar informação
-PUT: Alterar informação
-DELETE: Deleta informação
-*/
+routes.get('/incidents/', IncidentController.index);
+routes.post('/incidents/', IncidentController.create);
+routes.delete('/incidents/:id', IncidentController.delete);
 
-/*
-Tipos de parâmetros:
+routes.get('/profile/', ProfileController.index);
 
-Query params: após ? (filtros paginação)
-Route params: indetificar recursos, exemplo: /id
-Request Body: corpo da requisição, ex: criar ou alterar algo
-*/
-
-routes.post('/users/', (request, response) =>{
-    
-    const body = request.body;
-
-    console.log(body);
-    
-    return response.json(body);
-});
-
-//exporta este variavel de dentro de um arquivo. Esta sendo importado pela index
 module.exports = routes;

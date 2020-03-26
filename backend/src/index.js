@@ -1,5 +1,7 @@
 //express "puro" indica que é um pacote
 const express = require('express');
+
+const cors = require('cors');
 //importa variavel routes que está sendo exportado no arquivo routes.js. 
 // "./" = indica que é um arquivo
 const routes = require('./routes')
@@ -8,6 +10,7 @@ const routes = require('./routes')
 //cria aplicação
 const app = express();
 
+app.use(cors());
 //tem que vir antes, diz ao express transformar o JSON em java script object
 app.use(express.json());
 app.use(routes);
