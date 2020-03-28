@@ -1,4 +1,5 @@
 const connection = require('../database/connection');
+const crypto = require('crypto');
 
 module.exports = {
 
@@ -13,7 +14,9 @@ module.exports = {
         const { name, email, whatsapp, city, uf } = request.body;
     
         const id = crypto.randomBytes(4).toString('HEX');
-    
+        
+        console.log({ name, email, whatsapp, city, uf });
+        
         await connection('ongs').insert({
             id, 
             name,
